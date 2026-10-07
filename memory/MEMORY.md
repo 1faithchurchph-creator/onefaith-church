@@ -1,0 +1,3 @@
+- [1faithauth table schema](1faithauth_schema.md) — Full schema for the internal auth table (username/password, no Supabase Auth)
+- [Content table convention](content_tables.md) — Per-section key-value content tables (home_content, ministries_content, etc.)
+- [Home worship SQL](home_worship_sql.md) — SQL for images bucket + Sunday Worship Service content keys

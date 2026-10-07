@@ -5,11 +5,14 @@ import AppRoutes from './routing/AppRoutes'
 
 const AppLayout = () => {
   const location = useLocation()
-  const isAdmin = location.pathname === '/admin'
+  const isBareRoute =
+    location.pathname.startsWith('/admin') ||
+    location.pathname.startsWith('/permissions') ||
+    location.pathname.startsWith('/privacy')
 
   return (
     <>
-      {!isAdmin && <Navbar />}
+      {!isBareRoute && <Navbar />}
       <AppRoutes />
     </>
   )

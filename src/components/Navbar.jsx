@@ -1,14 +1,14 @@
 //This would be the navbar it contains the logo and the links Home, Ministries, Sermons, Give, Calendar and Contact using react-router-dom to navigate between pages
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { useHomeContent } from '../lib/homeContent'
 import logo from '../assets/image.png'
-import cover from '../assets/cover.png'
 import '../css/navbar.css'
 
-const Logo = () => {
+const Logo = ({ src }) => {
   return (
     <NavLink to="/" end className="navbar-logo">
-      <img src={logo} alt="Church Logo" />
+      <img src={src} alt="Church Logo" />
     </NavLink>
   )
 }
@@ -16,16 +16,19 @@ const Logo = () => {
 const Navbar = () => {
   const location = useLocation()
   const isHome = location.pathname === '/'
+  const { map } = useHomeContent()
+  const coverUrl = map['navbar_cover'] || ''
+  const coverPosition = map['navbar_cover_position'] || '50% 50%'
 
   return (
     <div className={`navbar${isHome ? ' navbar--home' : ''}`}>
       {isHome && (
         <div className="navbar-media" aria-hidden="true">
-          <img src={cover} alt="" />
+          {coverUrl ? <img src={coverUrl} alt="" style={{ objectPosition: coverPosition }} /> : <div className="navbar-media__skeleton" />}
         </div>
       )}
       <div className="navbar-content">
-        <Logo />
+        <Logo src={logo} />
 
         <nav className="navbar-links">
           <NavLink to="/" end className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>

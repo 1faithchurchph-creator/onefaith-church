@@ -1,0 +1,211 @@
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: #1e7fa3;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: #2596be;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.25s ease;
+}
+
+.sidebar-header {
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.sidebar-header img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0.3rem 0;
+}
+
+.sidebar-link,
+.sidebar-logout {
+  /* Grow to share all the free sidebar height so there's no blank space and
+     items fill the whole screen without a scrollbar. */
+  flex: 1 1 0;
+}
+
+.sidebar-link {
+  padding: 0.3rem 1rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s, color 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.sidebar-link.active {
+  background: rgba(0, 0, 0, 0.15);
+  color: #fff;
+  border-left-color: #fff;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0.15rem 1.1rem;
+}
+
+.sidebar-logout {
+  padding: 0.3rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.sidebar-logout:hover {
+  background: #c0392b;
+  color: #fff;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+/* Logout confirmation modal */
+.sidebar-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.sidebar-modal {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.sidebar-modal__title {
+  margin: 0 0 0.5rem;
+  color: #0d2c3a;
+  font-family: 'Poppins', 'Lexend', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.15rem;
+}
+
+.sidebar-modal__text {
+  margin: 0 0 1.25rem;
+  color: #5b7486;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.sidebar-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.sidebar-modal__cancel {
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #eef0f3;
+  color: #555;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-modal__cancel:hover {
+  background: #e0e4e8;
+}
+
+.sidebar-modal__confirm {
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #c0392b;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-modal__confirm:hover {
+  background: #a93226;
+}

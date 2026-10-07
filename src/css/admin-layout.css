@@ -1,0 +1,16 @@
+.admin-page {
+  margin-left: 250px;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 4rem;
+  }
+}

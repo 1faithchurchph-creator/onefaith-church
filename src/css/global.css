@@ -1,0 +1,33 @@
+html {
+  font-size: 18px;
+}
+
+/* Admin area keeps the normal 16px base (the 18px bump is for public visitors only) */
+html:has(.admin-page),
+html:has(.admin-login-page) {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Lexend', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', 'Lexend', 'Segoe UI', system-ui, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}

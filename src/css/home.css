@@ -1,5 +1,6 @@
 .home-page {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .home-tagline {
@@ -28,7 +29,7 @@
 .home-tagline__text p {
   margin: 0;
   font-size: clamp(1.1rem, 2vw, 1.8rem);
-  line-height: 1.5;
+  line-height: 1.65;
   max-width: 28ch;
 }
 
@@ -62,5 +63,738 @@
 
   .home-tagline__image img {
     width: min(85vw, 420px);
+  }
+}
+
+.review-section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+  box-sizing: border-box;
+}
+
+.review-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.review-video {
+  width: 80%;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem auto;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
+
+@media (max-width: 900px) {
+  .review-section {
+    width: 92%;
+  }
+
+  .review-video {
+    width: 92%;
+  }
+}
+
+.worship-section {
+  width: 100%;
+  padding: 3.5rem 0 4.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #eef6fb 0%, #ffffff 55%);
+}
+
+.worship-inner {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.section-heading__tag {
+  display: inline-block;
+  background: #2596be;
+  color: #fff;
+  font-family: 'Poppins', 'Lexend', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.3rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.section-heading__title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #0d2c3a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.worship-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.worship-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3ecf2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(37, 150, 190, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.worship-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(37, 150, 190, 0.2);
+}
+
+.worship-card__media {
+  position: relative;
+  padding: 0.9rem 0.9rem 0;
+}
+
+.worship-card__media img {
+  width: 100%;
+  max-height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.worship-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem 1.3rem;
+}
+
+.worship-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  border-radius: 10px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.worship-button svg {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}
+
+.worship-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.worship-button--map {
+  background: #2596be;
+}
+
+.worship-button--zoom {
+  background: linear-gradient(135deg, #4f8ef7, #7b5cf0);
+}
+
+@media (max-width: 900px) {
+  .worship-inner {
+    width: 92%;
+  }
+
+  .worship-cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+.connect-section {
+  width: 100%;
+  padding: 2rem 0 4.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #ffffff 0%, #eef6fb 100%);
+}
+
+.connect-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.connect-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3ecf2;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 30px rgba(37, 150, 190, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.connect-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(37, 150, 190, 0.2);
+}
+
+.connect-card__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: #0d2c3a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.connect-card__text {
+  margin: 0 0 1.5rem;
+  flex: 1;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.8;
+  color: #333;
+}
+
+.connect-card__text p {
+  margin: 0 0 0.6rem;
+}
+
+.connect-card__text p:last-child {
+  margin-bottom: 0;
+}
+
+.connect-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.1rem;
+  background: #2596be;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  border-radius: 10px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.connect-card__button svg {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}
+
+.connect-card__button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .connect-cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+.empower-section {
+  width: 100%;
+  padding: 3rem 0 4.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #eef6fb 0%, #ffffff 100%);
+  text-align: center;
+}
+
+.empower-title {
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #0d2c3a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.empower-body {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.8;
+  color: #333;
+}
+
+.empower-body p {
+  margin: 0 0 0.8rem;
+}
+
+.empower-body p:last-child {
+  margin-bottom: 0;
+}
+
+.empower-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: #2596be;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(37, 150, 190, 0.3);
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.empower-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.events-ministries-section {
+  width: 100%;
+  padding: 3rem 0 4.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #ffffff 0%, #eef6fb 100%);
+}
+
+.events-ministries-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ministries-card,
+.events-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3ecf2;
+  border-radius: 16px;
+  padding: 1.6rem;
+  box-shadow: 0 10px 30px rgba(37, 150, 190, 0.12);
+}
+
+.ministries-card__title,
+.events-card__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: #0d2c3a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ministries-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0 0 0.9rem;
+  background: #eef6fb;
+}
+
+.ministries-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.ministries-slide--active {
+  opacity: 1;
+}
+
+.ministries-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ministries-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 1.2rem;
+}
+
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #c9dde6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dot--active {
+  background: #2596be;
+}
+
+.ministries-card__button,
+.events-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding: 0.85rem 1.1rem;
+  background: #2596be;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  border-radius: 10px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.ministries-card__button:hover,
+.events-card__button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.home-calendar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e3ecf2;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0.1rem;
+  aspect-ratio: 4 / 3;
+  margin: 0 0 1.2rem;
+  background: #fff;
+}
+
+.home-calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 0.35rem 0.75rem;
+  font-family: 'Poppins', 'Lexend', 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  color: #0d2c3a;
+  background: #eef6fb;
+}
+
+.home-calendar__label {
+  flex: 1;
+  text-align: center;
+}
+
+.home-calendar__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #2596be;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.home-calendar__nav:hover {
+  background: rgba(37, 150, 190, 0.12);
+  color: #0d2c3a;
+}
+
+.home-calendar__nav svg {
+  width: 1em;
+  height: 1em;
+}
+
+.home-calendar__grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 0.1rem;
+  padding: 0.35rem;
+}
+
+.home-calendar__weekday,
+.home-calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-calendar__weekday {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #7a9bad;
+}
+
+.home-calendar__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  color: #333;
+  border-radius: 8px;
+}
+
+/* Today = solid circle; event days = outlined circle. line-height:1 keeps the
+   number exactly centered — the default line box pushes the glyph off-center. */
+.home-calendar__day--today .num,
+.home-calendar__day--events .num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6em;
+  height: 1.6em;
+  padding: 0 0.15em;
+  border-radius: 50%;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.home-calendar__day--today .num {
+  background: #2596be;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+}
+
+.home-calendar__day--events .num {
+  border: 2px solid #2596be;
+  color: #0d6e96;
+  font-weight: 700;
+}
+
+.home-divider {
+  width: 80%;
+  max-width: 1000px;
+  height: 1px;
+  background: #e3ecf2;
+  margin: 0 auto;
+}
+
+.give-section {
+  width: 100%;
+  padding: 3rem 0 4.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #eef6fb 0%, #ffffff 100%);
+}
+
+.give-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.give-video-wrap {
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 10px 30px rgba(37, 150, 190, 0.12);
+}
+
+.give-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.give-video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: #7a9bad;
+  background: #eef6fb;
+}
+
+.give-card {
+  display: flex;
+  justify-content: center;
+}
+
+.give-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: #2596be;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(37, 150, 190, 0.3);
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.give-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .events-ministries-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .give-grid {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+  }
+}
+
+/* Scroll-reveal: elements slide toward their own side when scrolled into view.
+   Uses animations (not transitions) so hover transform/filter transitions on
+   cards & buttons are unaffected. */
+[data-reveal] {
+  opacity: 0;
+}
+
+[data-reveal].is-revealed {
+  animation: reveal 0.7s ease both;
+}
+
+[data-reveal="left"].is-revealed {
+  animation-name: reveal-left;
+}
+
+[data-reveal="right"].is-revealed {
+  animation-name: reveal-right;
+}
+
+[data-reveal="up"].is-revealed {
+  animation-name: reveal-up;
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    translate: -28px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes reveal-right {
+  from {
+    opacity: 0;
+    translate: 28px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-tagline {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .home-tagline__image img {
+    width: min(72vw, 260px);
+  }
+
+  .review-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .worship-card__body {
+    padding: 0.85rem 0.9rem 1rem;
+  }
+
+  .connect-card {
+    padding: 1.3rem;
+  }
+
+  .ministries-card,
+  .events-card {
+    padding: 1.2rem;
   }
 }
